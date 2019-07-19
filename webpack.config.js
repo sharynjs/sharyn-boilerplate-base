@@ -17,7 +17,6 @@ module.exports = {
     ],
   },
   devServer: {
-    hot: true,
     port: 8080,
     sockPort: 8080,
     headers: { 'Access-Control-Allow-Origin': '*' },

@@ -3,12 +3,13 @@
   "private": true,
   "scripts": {
     "start": "run-p dev:*",
-    "prod": "run-s prod:*",
+    "prod": "run-s clean prod:*",
     "dev:server": "http-server dist -p 8000",
-    "dev:wds": "webpack-dev-server --hotOnly",
-    "prod:build": "webpack",
+    "dev:wds": "webpack-dev-server --hot",
+    "prod:build": "webpack --mode production",
     "prod:server": "http-server dist -p $PORT",
-    "lint": "eslint src && flow"
+    "lint": "eslint src && flow",
+    "clean": "rimraf dist/bundle.js"
   },
   "babel": {
     "presets": [
@@ -54,6 +55,7 @@
     "flow-bin": "0.103.0",
     "npm-run-all": "^4.1.5",
     "prettier": "1.18.2",
+    "rimraf": "^2.6.3",
     "webpack": "4.36.1",
     "webpack-cli": "3.3.6",
     "webpack-dev-server": "3.7.2",
